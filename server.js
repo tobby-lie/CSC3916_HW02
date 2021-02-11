@@ -23,11 +23,12 @@ app.use(passport.initialize());
 
 var router = express.Router();
 
-function getJSONObjectForMovieRequirement(req) {
+function getJSONObjectForMovieRequirement(req, msg) {
     var json = {
         headers: "No headers",
         key: process.env.UNIQUE_KEY,
-        body: "No body"
+        body: "No body",
+        msg: msg
     };
 
     if (req.body != null) {
@@ -79,7 +80,7 @@ router.route('/movies')
         if (req.get('Content-Type')) {
             res = res.type(req.get('Content-Type'));
         }
-        var o = getJSONObjectForMovieRequirement(req);
+        var o = getJSONObjectForMovieRequirement(req, "movie deleted");
         res.json(o);
     }
     )
@@ -89,8 +90,7 @@ router.route('/movies')
         if (req.get('Content-Type')) {
             res = res.type(req.get('Content-Type'));
         }
-        var o = getJSONObjectForMovieRequirement(req);
-        o.msg = "movie updated"
+        var o = getJSONObjectForMovieRequirement(req, "movie updated");
         res.json(o);
     }
     );
