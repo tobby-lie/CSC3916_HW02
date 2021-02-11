@@ -90,9 +90,19 @@ router.route('/testcollection')
             res = res.type(req.get('Content-Type'));
         }
         var o = getJSONObjectForMovieRequirement(req);
+        o.msg = "movie updated"
         res.json(o);
     }
-    );
+    )
+    .get(, function(req, res){
+        res = res.status(200);
+        if (req.get('Content-Type')) {
+            res = res.type(req.get('Content-Type'));
+        }
+        var o = getJSONObjectForMovieRequirement(req);
+        o.msg = "GET movies"
+
+    });
 
 app.use('/', router);
 app.listen(process.env.PORT || 8080);
