@@ -94,7 +94,7 @@ router.route('/movies')
         res.json(o);
     }
     )
-    .get(, function(req, res){
+    .get(function(req, res){
         res = res.status(200);
         if (req.get('Content-Type')) {
             res = res.type(req.get('Content-Type'));
