@@ -115,8 +115,9 @@ router.route('/movies')
     }
     )
     .patch(function(req, res){
-            res.send({msg: 'This HTTP method is not supported.'})
-        }
+        res.json({success: false, msg: 'Please include both username and password to signup.'});
+
+    }
     );
 
 app.use('/', router);
