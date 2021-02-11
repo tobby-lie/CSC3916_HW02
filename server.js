@@ -23,12 +23,12 @@ app.use(passport.initialize());
 
 var router = express.Router();
 
-function getJSONObjectForMovieRequirement(req, msg) {
+function getJSONObjectForMovieRequirement(req, message) {
     var json = {
         headers: "No headers",
         key: process.env.UNIQUE_KEY,
         body: "No body",
-        msg: msg
+        msg: message
     };
 
     if (req.body != null) {
