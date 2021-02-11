@@ -114,7 +114,7 @@ router.route('/movies')
         res.json(o);
     }
     )
-    .patch(function(req, res){
+    .all(function(req, res){
         res.json({success: false, msg: 'Please include both username and password to signup.'});
 
     }
