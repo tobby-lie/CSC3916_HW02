@@ -58,9 +58,9 @@ router.route('/signup')
     }
     )
     .all(function(req, res){
-            res.json({success: false, msg: 'This HTTP method is not supported.'});
+        res.json({success: false, msg: 'This HTTP method is not supported.'});
 
-        }
+    }
     );
 
 router.route('/signin')
@@ -82,9 +82,9 @@ router.route('/signin')
     }
     )
     .all(function(req, res){
-            res.json({success: false, msg: 'This HTTP method is not supported.'});
+        res.json({success: false, msg: 'This HTTP method is not supported.'});
 
-        }
+    }
     );
 
 router.route('/movies')
