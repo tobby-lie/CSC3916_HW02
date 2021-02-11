@@ -121,7 +121,7 @@ router.route('/movies')
     );
 
 router.all('/', function (req, res) {
-    res.json({success: false, msg: 'This HTTP method is not supported.'});
+    res.json({success: false, msg: 'This route is not supported.'});
 });
 
 app.use('/', router);
