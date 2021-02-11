@@ -120,6 +120,10 @@ router.route('/movies')
     }
     );
 
+router.all('/', function (req, res) {
+    res.json({success: false, msg: 'This HTTP method is not supported.'});
+});
+
 app.use('/', router);
 app.listen(process.env.PORT || 8080);
 module.exports = app; // for testing only
