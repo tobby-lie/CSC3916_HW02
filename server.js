@@ -64,7 +64,7 @@ router.route('/signup')
     );
 
 router.route('/signin')
-    .post('/signin', function (req, res) {
+    .post(function (req, res) {
         var user = db.findOne(req.body.username);
 
         if (!user) {
