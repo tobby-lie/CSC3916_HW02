@@ -93,16 +93,26 @@ router.route('/movies')
         var o = getJSONObjectForMovieRequirement(req, "movie updated");
         res.json(o);
     }
-    );
-    // .get(function(req, res){
-    //     res = res.status(200);
-    //     if (req.get('Content-Type')) {
-    //         res = res.type(req.get('Content-Type'));
-    //     }
-    //     var o = getJSONObjectForMovieRequirement(req);
-    //     o.msg = "GET movies"
-    //
-    // });
+    )
+    .get(function(req, res){
+        console.log(req.body);
+        res = res.status(200);
+        if (req.get('Content-Type')) {
+            res = res.type(req.get('Content-Type'));
+        }
+        var o = getJSONObjectForMovieRequirement(req, "GET movies");
+        res.json(o);
+    }
+    )
+    .post(function(req, res){
+        console.log(req.body);
+        res = res.status(200);
+        if (req.get('Content-Type')) {
+            res = res.type(req.get('Content-Type'));
+        }
+        var o = getJSONObjectForMovieRequirement(req, "movie saved");
+        res.json(o);
+    });
 
 app.use('/', router);
 app.listen(process.env.PORT || 8080);
